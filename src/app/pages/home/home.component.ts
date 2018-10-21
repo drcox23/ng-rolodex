@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-// import { BackendService } from '../../services/backend.service';
+import { Component, OnInit } from '@angular/core';
+import { BackendService } from '../../services/backend.service';
 
 @Component({
   selector: "home-page",
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   data: {
     header: string;
   } = {
-    header: "header"
+    header: 'header'
   };
   formData: {
     name: string;
@@ -26,23 +26,22 @@ export class HomeComponent implements OnInit {
     class: ""
   };
 
-  constructor() {
-    // private backend: BackendService) {
-    // const subtitle: string = "This is really awesome";
-    // this.subtitle = subtitle;
+  constructor(private backend: BackendService) {
+    const subtitle: string = "This is really awesome";
+    this.subtitle = subtitle;
   }
 
-  // ngOnInit() {
-  //   this.characters = this.backend.characters;
+  ngOnInit() {
+    this.characters = this.backend.characters;
 
-  //   this.backend.addCharacter({ name: 'doug' });
-  //   this.characters.push({ name: 'baseem' });
+    this.backend.addCharacter({ name: 'doug' });
+    this.characters.push({ name: 'baseem' });
 
-  //   this.backend.getCharacter(20)
-  //   .then((data) => {
-  //     console.log(data);
-  //   });
-  // }
+    this.backend.getCharacter(20)
+    .then((data) => {
+      console.log(data);
+    });
+  }
 
   submit() {
     console.log("submission!!! ", this.formData);
