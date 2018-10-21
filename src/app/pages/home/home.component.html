@@ -1,0 +1,19 @@
+<h1>
+  {{ title }}
+</h1>
+
+<div>
+
+  <form action="">
+    <span>Search for Contacts: </span>
+    <input type="text" name="name" value="" [(ngModel)]="formData.name">
+  </form>
+  <br>
+  <!-- <button (click)="submit()">Search</button> -->
+
+  <br>
+
+  <div [class]="contact-cards">
+    {{ formData.name }}
+  </div>
+</div>
