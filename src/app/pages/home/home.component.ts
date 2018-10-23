@@ -25,6 +25,11 @@ export class HomeComponent implements OnInit {
     phoneNumber: "",
     class: ""
   };
+  characters: {
+    name: string;
+  } = {
+    name: ""
+  }
 
   constructor(private backend: BackendService) {
     const subtitle: string = "This is really awesome";
@@ -40,6 +45,7 @@ export class HomeComponent implements OnInit {
     this.backend.getCharacter(20)
     .then((data) => {
       console.log(data);
+      // this.backend.addCharacter({ name: data.name});
     });
   }
 

@@ -2,11 +2,14 @@
   {{ title }}
 </h1>
 
+<h2>
+  {{ subtitle }}
+</h2>
+
 <div>
 
   <form action="">
-    <span>Search for Contacts: </span>
-    <input type="text" name="name" value="" [(ngModel)]="formData.name">
+    <input type="text" name="name" placeholder="Search for contact here" value="" [(ngModel)]="formData.name">
   </form>
   <br>
   <!-- <button (click)="submit()">Search</button> -->
@@ -14,11 +17,14 @@
   <br>
 
   <div [class]="contact-cards">
+    <ul>
+      <li *ngFor="let char of characters">
+        {{ char.name }}
+      </li>
+    </ul>
     {{ formData.name }}
   </div>
-</div>
-
-<div *ngFor="let char for characters">
-  {{ char.name }}
 
 </div>
+
+

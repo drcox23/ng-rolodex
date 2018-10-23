@@ -7,7 +7,14 @@ import { HttpClient } from '@angular/common/http';
 export class BackendService {
   baseUrl: string = 'https://swapi.co/api/';
 
-  characters: any[] = [];
+  characters: any[]=[
+    {
+      name: 'bob'
+    },
+    {
+      name: 'check'
+    }
+  ];
 
   constructor(private http: HttpClient) {
 
