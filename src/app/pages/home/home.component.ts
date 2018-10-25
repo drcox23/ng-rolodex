@@ -25,11 +25,7 @@ export class HomeComponent implements OnInit {
     phoneNumber: "",
     class: ""
   };
-  characters: {
-    name: string;
-  } = {
-    name: ""
-  }
+  characters: any[];
 
   constructor(private backend: BackendService) {
     const subtitle: string = "This is really awesome";
